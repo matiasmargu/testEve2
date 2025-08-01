@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Jurídico Evelyn Shifman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(247, 250, 252, 0.9) 100%);
+            backdrop-filter: blur(10px);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            transition: all 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen font-sans antialiased">
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/34123456789" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-balance-scale text-indigo-600 text-2xl"></i>
+                <span class="text-xl font-bold text-indigo-800">Estudio Jurídico Shifman</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" id="inicioLink" class="text-indigo-700 hover:text-indigo-900 font-medium transition-all relative group">
+                    Inicio
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#" id="serviciosLink" class="text-gray-600 hover:text-indigo-700 font-medium transition-all relative group">
+                    Servicios
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#" id="nosotrosLink" class="text-gray-600 hover:text-indigo-700 font-medium transition-all relative group">
+                    Nosotros
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#" id="contactoLink" class="text-gray-600 hover:text-indigo-700 font-medium transition-all relative group">
+                    Contacto
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full"></span>
+                </a>
+            </nav>
+            <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-indigo-700 transition-all">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
+            <div class="md:w-1/2 space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                    Defendemos tus <span class="gradient-text">derechos</span> con excelencia
+                </h1>
+                <p class="text-lg text-gray-600">
+                    La Dra. Evelyn Shifman y su equipo ofrecen asesoramiento legal especializado con más de 15 años de experiencia. Su solución jurídica está en buenas manos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="startButton" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform hover:scale-105 flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Contactar ahora
+                    </button>
+                    <button id="videoButton" class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-medium py-3 px-6 rounded-lg transition-all flex items-center">
+                        <i class="fas fa-calendar-check mr-2"></i> Pedir cita
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4 pt-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente">
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <span class="font-medium">5.0</span>
+                            <span class="text-gray-500 ml-1">(128 reseñas)</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Clientes satisfechos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <img src="https://svgsilh.com/svg/2071621.svg" alt="Abogada trabajando" class="w-full max-w-md floating relative z-10">
+                <div class="absolute -bottom-4 -right-4 w-64 h-64 bg-indigo-200 rounded-full opacity-20"></div>
+                <div class="absolute -top-4 -left-4 w-40 h-40 bg-purple-200 rounded-full opacity-20"></div>
+            </div>
+        </section>
+
+        <!-- Practice Areas Section -->
+        <section class="py-12" id="servicios">
+            <div class="text-center mb-12">
+                <span class="text-indigo-600 font-semibold">ÁREAS DE PRÁCTICA</span>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Servicios Legales Especializados</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ofrecemos soluciones jurídicas integrales en diversas ramas del derecho para brindarte la mejor defensa legal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho Civil</h3>
+                    <p class="text-gray-600 mb-4">
+                        Contratos, responsabilidad civil, daños y perjuicios, sucesiones y más.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-briefcase text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho Laboral</h3>
+                    <p class="text-gray-600 mb-4">
+                        Despidos, acoso laboral, accidentes de trabajo y reclamaciones salariales.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho de Familia</h3>
+                    <p class="text-gray-600 mb-4">
+                        Divorcios, custodia de menores, alimentos, violencia familiar y más.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho Inmobiliario</h3>
+                    <p class="text-gray-600 mb-4">
+                        Compraventa, arrendamientos, hipotecas y conflictos de propiedad.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-gavel text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho Penal</h3>
+                    <p class="text-gray-600 mb-4">
+                        Defensa en juicios, recursos, libertad condicional y asesoramiento a víctimas.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Derecho Mercantil</h3>
+                    <p class="text-gray-600 mb-4">
+                        Constitución de empresas, contratos mercantiles, fusiones y adquisiciones.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                        Saber más
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-12 bg-white rounded-xl shadow-md p-8 mb-12" id="nosotros">
+            <div class="text-center mb-12">
+                <span class="text-indigo-600 font-semibold">NUESTRA FILOSOFÍA</span>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Por qué elegirnos?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Descubre lo que nos hace diferentes y cómo podemos agregar valor a tu caso legal.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dra. Evelyn Shifman" class="w-full rounded-lg shadow-lg">
+                    <div class="absolute -bottom-6 -right-6 bg-indigo-600 text-white p-6 rounded-lg shadow-lg w-3/4">
+                        <div class="flex items-center">
+                            <div class="text-3xl font-bold mr-2">15+</div>
+                            <div class="text-sm">Años de<br>experiencia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <div class="flex items-start gap-4 p-4 bg-indigo-50 rounded-lg">
+                        <div class="bg-indigo-100 p-3 rounded-lg flex-shrink-0">
+                            <i class="fas fa-award text-indigo-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Excelencia profesional</h3>
+                            <p class="text-gray-600">
+                                Formación en las mejores universidades y constante actualización en las últimas tendencias legales.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-lg">
+                        <div class="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                            <i class="fas fa-user-tie text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Enfoque personalizado</h3>
+                            <p class="text-gray-600">
+                                Cada caso recibe atención individualizada con estrategias legales adaptadas a tus necesidades específicas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
+                        <div class="bg-purple-100 p-3 rounded-lg flex-shrink-0">
+                            <i class="fas fa-lock text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Confidencialidad garantizada</h3>
+                            <p class="text-gray-600">
+                                Tu privacidad es nuestra prioridad. Garantizamos absoluta discreción y protección de tu información.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg">
+                        <div class="bg-green-100 p-3 rounded-lg flex-shrink-0">
+                            <i class="fas fa-hand-holding-heart text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Compromiso ético</h3>
+                            <p class="text-gray-600">
+                                Ejercicio profesional basado en valores, honestidad y transparencia en todas nuestras actuaciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-12 mb-12">
+            <div class="text-center mb-12">
+                <span class="text-indigo-600 font-semibold">TESTIMONIOS</span>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    La satisfacción de nuestros clientes es nuestro mayor logro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="testimonial-card p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">María González</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "La Dra. Shifman resolvió mi caso de divorcio con gran profesionalismo y sensibilidad. Siempre disponible y con excelentes resultados."
+                    </p>
+                </div>
+
+                <div class="testimonial-card p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carlos Martínez</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Excelente servicio en mi problema laboral. Me asesoraron perfectamente y logramos un acuerdo favorable. Totalmente recomendable."
+                    </p>
+                </div>
+
+                <div class="testimonial-card p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Laura Fernández</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Increíble trabajo en la sucesión de mi padre. Todo fue claro, transparente y sin complicaciones. Volvería a confiar en ellos sin dudarlo."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg overflow-hidden" id="contacto">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 p-8 text-white">
+                    <h2 class="text-3xl font-bold mb-4">¿Necesitas asesoría legal?</h2>
+                    <p class="mb-6 text-indigo-100">
+                        Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas para evaluar tu caso.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Teléfono</h4>
+                                <p class="text-indigo-100">+34 123 456 789</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-indigo-100">contacto@shifmanabogados.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Dirección</h4>
+                                <p class="text-indigo-100">Calle Legal 123, Madrid, España</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Horario de atención</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-medium">Lunes - Viernes</p>
+                                <p class="text-indigo-100">9:00 - 18:00</p>
+                            </div>
+                            <div>
+                                <p class="font-medium">Sábados</p>
+                                <p class="text-indigo-100">10:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 bg-white p-8 contact-form">
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-1">Nombre completo</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-1">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-700 font-medium mb-1">Área de interés</label>
+                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                                <option value="">Seleccione un área</option>
+                                <option value="civil">Derecho Civil</option>
+                                <option value="laboral">Derecho Laboral</option>
+                                <option value="familia">Derecho de Familia</option>
+                                <option value="inmobiliario">Derecho Inmobiliario</option>
+                                <option value="penal">Derecho Penal</option>
+                                <option value="mercantil">Derecho Mercantil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform hover:scale-105">
+                            Enviar consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-12">
+            <div class="text-center mb-12">
+                <span class="text-indigo-600 font-semibold">PREGUNTAS FRECUENTES</span>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Tienes alguna duda?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Resolvemos las preguntas más comunes que nos hacen nuestros clientes.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 focus:outline-none">
+                        <span>¿Cuál es el costo de la primera consulta?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>La primera consulta tiene un costo reducido de 50€. Durante esta sesión evaluaremos tu caso y te daremos un presupuesto personalizado para los servicios que necesites.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 focus:outline-none">
+                        <span>¿Cuánto tiempo suele durar un proceso legal?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>La duración varía según el tipo de caso y su complejidad. Algunos asuntos pueden resolverse en semanas mediante acuerdos, mientras que otros procesos judiciales pueden extenderse varios meses. En tu primera consulta te daremos una estimación más precisa según tu situación particular.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 focus:outline-none">
+                        <span>¿Trabajan con casos de otras comunidades autónomas?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>Sí, aunque nuestra sede física está en Madrid, tenemos capacidad para atender casos en toda España gracias a nuestra red de colaboradores y al uso de tecnologías que nos permiten trabajar de forma remota cuando es posible.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 focus:outline-none">
+                        <span>¿Qué documentación debo llevar a la primera consulta?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>Depende del tipo de asunto, pero en general recomendamos traer cualquier documento relacionado con tu caso (contratos, notificaciones, comunicaciones, etc.). Si no estás seguro, puedes traer lo que consideres relevante y durante la consulta te indicaremos si necesitamos algo adicional.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 focus:outline-none">
+                        <span>¿Ofrecen servicios de mediación?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600 hidden">
+                        <p>Sí, contamos con especialistas en mediación que pueden ayudarte a resolver conflictos de forma más rápida, económica y menos confrontacional que un proceso judicial tradicional. La mediación es especialmente útil en casos de familia, vecinales y algunos conflictos laborales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-balance-scale text-indigo-400 text-2xl"></i>
+                        <span class="text-xl font-bold">Estudio Jurídico Shifman</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Ejercicio profesional ético y comprometido con la justicia desde 2008.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/abogada_urgente" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Derecho Civil</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Derecho Laboral</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Derecho de Familia</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Derecho Inmobiliario</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Derecho Penal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">Enlaces útiles</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog Legal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Preguntas Frecuentes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Mapa del Sitio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                            <span>Calle Legal 123, Madrid</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-indigo-400"></i>
+                            <span>+34 123 456 789</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-indigo-400"></i>
+                            <span>contacto@shifmanabogados.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-clock text-indigo-400"></i>
+                            <span>Lun-Vie: 9:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Estudio Jurídico Evelyn Shifman. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="appointmentModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Solicitar cita</h3>
+                <p class="text-gray-600 mb-6">Selecciona el tipo de consulta y tu disponibilidad</p>
+                
+                <form id="appointmentForm" class="space-y-4">
+                    <div>
+                        <label for="appointmentName" class="block text-gray-700 font-medium mb-1">Nombre completo</label>
+                        <input type="text" id="appointmentName" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="appointmentEmail" class="block text-gray-700 font-medium mb-1">Email</label>
+                        <input type="email" id="appointmentEmail" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="appointmentPhone" class="block text-gray-700 font-medium mb-1">Teléfono</label>
+                        <input type="tel" id="appointmentPhone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="appointmentType" class="block text-gray-700 font-medium mb-1">Tipo de consulta</label>
+                        <select id="appointmentType" name="type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                            <option value="">Seleccione un tipo</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="online">Online (videollamada)</option>
+                            <option value="telefonica">Telefónica</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="appointmentDate" class="block text-gray-700 font-medium mb-1">Fecha preferida</label>
+                        <input type="date" id="appointmentDate" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="appointmentTime" class="block text-gray-700 font-medium mb-1">Hora preferida</label>
+                        <select id="appointmentTime" name="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                            <option value="">Seleccione una hora</option>
+                            <option value="09:00">09:00 - 10:00</option>
+                            <option value="10:00">10:00 - 11:00</option>
+                            <option value="11:00">11:00 - 12:00</option>
+                            <option value="12:00">12:00 - 13:00</option>
+                            <option value="16:00">16:00 - 17:00</option>
+                            <option value="17:00">17:00 - 18:00</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all">
+                        Solicitar cita
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const nav = document.createElement('div');
+            nav.className = 'fixed inset-0 bg-black/50 z-50 flex justify-end';
+            nav.innerHTML = `
+                <div class="bg-white w-4/5 max-w-sm h-full p-6 shadow-lg overflow-y-auto">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-balance-scale text-indigo-600 text-2xl"></i>
+                            <span class="text-xl font-bold text-indigo-800">Shifman Abogados</span>
+                        </div>
+                        <button class="text-gray-600 close-menu">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <nav class="flex flex-col space-y-4">
+                        <a href="#" class="text-indigo-700 hover:text-indigo-900 font-medium py-2 px-4 rounded-lg bg-indigo-50" onclick="closeMobileMenu(); window.scrollTo({top: 0, behavior: 'smooth'});">Inicio</a>
+                        <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium py-2 px-4 rounded-lg hover:bg-indigo-50" onclick="closeMobileMenu(); document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});">Servicios</a>
+                        <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium py-2 px-4 rounded-lg hover:bg-indigo-50" onclick="closeMobileMenu(); document.getElementById('nosotros').scrollIntoView({behavior: 'smooth'});">Nosotros</a>
+                        <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium py-2 px-4 rounded-lg hover:bg-indigo-50" onclick="closeMobileMenu(); document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">Contacto</a>
+                    </nav>
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/abogada_urgente" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-700 hover:text-white transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(nav);
+
+            nav.querySelector('.close-menu').addEventListener('click', function() {
+                nav.remove();
+            });
+
+            nav.addEventListener('click', function(e) {
+                if (e.target === nav) {
+                    nav.remove();
+                }
+            });
+        });
+
+        function closeMobileMenu() {
+            document.querySelector('.fixed.inset-0')?.remove();
+        }
+
+        // Navigation
+        document.getElementById('inicioLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        document.getElementById('serviciosLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('servicios').scrollIntoView({behavior: 'smooth'});
+        });
+
+        document.getElementById('nosotrosLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('nosotros').scrollIntoView({behavior: 'smooth'});
+        });
+
+        document.getElementById('contactoLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});
+        });
+
+        // Buttons
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});
+        });
+
+        document.getElementById('videoButton').addEventListener('click', function() {
+            document.getElementById('appointmentModal').classList.remove('hidden');
+        });
+
+        // Modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('appointmentModal').classList.add('hidden');
+        });
+
+        document.getElementById('appointmentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.bg-white.p-6.rounded-xl.shadow-md button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo en breve.');
+            this.reset();
+        });
+
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Tu cita ha sido solicitada correctamente. Te enviaremos un email de confirmación.');
+            this.reset();
+            document.getElementById('appointmentModal').classList.add('hidden');
+        });
+
+        // Typewriter Effect
+        const title = document.querySelector('h1');
+        if (title) {
+            const originalText = title.textContent;
+            title.textContent = '';
+
+            let i = 0;
+            const speed = 50;
+
+            function typeWriter() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            setTimeout(typeWriter, 500);
+        }
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
