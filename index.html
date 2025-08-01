@@ -42,9 +42,12 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen font-sans antialiased">
-    <!-- Floating WhatsApp Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/34123456789" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-all">
+    <!-- Floating Social Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 space-y-3">
+        <a href="https://www.instagram.com/abogada_urgente" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        <a href="https://wa.me/1168932090" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-all">
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
     </div>
@@ -112,6 +115,10 @@
                         <p class="text-sm text-gray-500">Clientes satisfechos</p>
                     </div>
                 </div>
+                    <p class="text-gray-600 italic">
+                        "Excelente atención en mi caso de derecho mercantil. Resolvieron todas mis dudas con paciencia y logramos un resultado muy favorable para mi empresa."
+                    </p>
+                </div>
             </div>
             <div class="md:w-1/2 flex justify-center relative">
                 <img src="https://svgsilh.com/svg/2071621.svg" alt="Abogada trabajando" class="w-full max-w-md floating relative z-10">
@@ -139,10 +146,10 @@
                     <p class="text-gray-600 mb-4">
                         Contratos, responsabilidad civil, daños y perjuicios, sucesiones y más.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="civil">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
@@ -153,10 +160,10 @@
                     <p class="text-gray-600 mb-4">
                         Despidos, acoso laboral, accidentes de trabajo y reclamaciones salariales.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="laboral">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
@@ -167,10 +174,10 @@
                     <p class="text-gray-600 mb-4">
                         Divorcios, custodia de menores, alimentos, violencia familiar y más.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="familia">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
@@ -181,10 +188,10 @@
                     <p class="text-gray-600 mb-4">
                         Compraventa, arrendamientos, hipotecas y conflictos de propiedad.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="inmobiliario">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
@@ -195,10 +202,10 @@
                     <p class="text-gray-600 mb-4">
                         Defensa en juicios, recursos, libertad condicional y asesoramiento a víctimas.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="penal">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
@@ -209,10 +216,10 @@
                     <p class="text-gray-600 mb-4">
                         Constitución de empresas, contratos mercantiles, fusiones y adquisiciones.
                     </p>
-                    <a href="#" class="text-indigo-600 font-medium flex items-center group">
+                    <button class="text-indigo-600 font-medium flex items-center group service-detail-btn" data-service="mercantil">
                         Saber más
                         <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-all"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -299,7 +306,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="testimonial-card p-6 rounded-xl shadow-md border border-gray-100">
                     <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
@@ -356,6 +363,25 @@
                         "Increíble trabajo en la sucesión de mi padre. Todo fue claro, transparente y sin complicaciones. Volvería a confiar en ellos sin dudarlo."
                     </p>
                 </div>
+
+                <div class="testimonial-card p-6 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Roberto Sánchez</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Excelente defensa en mi caso penal. El equipo demostró gran conocimiento y dedicación, logrando la absolución. Profesionales de primer nivel."
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -374,7 +400,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold">Teléfono</h4>
-                                <p class="text-indigo-100">+34 123 456 789</p>
+                                <p class="text-indigo-100">+54 9 68932090</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -570,7 +596,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fas fa-phone text-indigo-400"></i>
-                            <span>+34 123 456 789</span>
+                            <span>+54 9 68932090</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fas fa-envelope text-indigo-400"></i>
@@ -590,8 +616,28 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modals -->
     <div id="appointmentModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+        <!-- Existing appointment modal content... -->
+    </div>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <button id="closeServiceModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-8">
+                <h3 id="serviceTitle" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+                <div id="serviceContent" class="prose text-gray-600">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <button id="contactAboutService" class="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition-all">
+                    Consultar sobre este servicio
+                </button>
+            </div>
+        </div>
+    </div>
         <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 relative">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
                 <i class="fas fa-times text-xl"></i>
@@ -740,6 +786,150 @@
         });
 
         document.getElementById('appointmentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+
+        // Service Detail Modal
+        const serviceData = {
+            civil: {
+                title: "Derecho Civil",
+                content: `
+                    <p>Nuestro equipo especializado en Derecho Civil ofrece asesoramiento integral en:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Contratos de todo tipo (compraventa, arrendamiento, prestación de servicios)</li>
+                        <li>Responsabilidad civil y reclamación de daños y perjuicios</li>
+                        <li>Derecho de obligaciones y contratos</li>
+                        <li>Derechos reales (propiedad, usufructo, servidumbres)</li>
+                        <li>Sucesiones y herencias (testamentos, particiones, declaraciones de herederos)</li>
+                        <li>Protección de derechos de consumidores y usuarios</li>
+                    </ul>
+                    <p class="mt-4">Contamos con amplia experiencia en la resolución de conflictos civiles, tanto mediante negociación como a través de procedimientos judiciales cuando sea necesario.</p>
+                `
+            },
+            laboral: {
+                title: "Derecho Laboral",
+                content: `
+                    <p>Asesoramiento especializado en todas las áreas del Derecho Laboral:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Despidos (improcedentes, disciplinarios, objetivos)</li>
+                        <li>Reclamaciones de cantidad (salarios, horas extras, pagas extras)</li>
+                        <li>Modificaciones sustanciales de condiciones de trabajo</li>
+                        <li>Mobbing y acoso laboral</li>
+                        <li>Accidentes de trabajo y enfermedades profesionales</li>
+                        <li>Expedientes de regulación de empleo (EREs)</li>
+                        <li>Contratos de trabajo y finiquitos</li>
+                        <li>Conflictos colectivos</li>
+                    </ul>
+                    <p class="mt-4">Defendemos tanto a trabajadores como a empresas, ofreciendo soluciones adaptadas a cada caso particular.</p>
+                `
+            },
+            familia: {
+                title: "Derecho de Familia",
+                content: `
+                    <p>Servicios jurídicos especializados en Derecho de Familia:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Divorcios y separaciones (de mutuo acuerdo o contenciosos)</li>
+                        <li>Regulación de custodia y visitas (patria potestad, custodia compartida)</li>
+                        <li>Pensiones alimenticias (fijación, modificación, ejecución)</li>
+                        <li>Procedimientos de violencia de género y doméstica</li>
+                        <li>Régimen económico matrimonial (capitulaciones matrimoniales)</li>
+                        <li>Filiación y reclamación de paternidad</li>
+                        <li>Adopciones nacionales e internacionales</li>
+                        <li>Protección de menores</li>
+                    </ul>
+                    <p class="mt-4">Abordamos estos procesos con la máxima sensibilidad y discreción, priorizando el bienestar familiar.</p>
+                `
+            },
+            inmobiliario: {
+                title: "Derecho Inmobiliario",
+                content: `
+                    <p>Asesoramiento integral en Derecho Inmobiliario:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Compraventa de viviendas y locales</li>
+                        <li>Arrendamientos urbanos y rústicos</li>
+                        <li>Hipotecas y reclamaciones bancarias</li>
+                        <li>Problemas con comunidades de propietarios</li>
+                        <li>Reclamaciones por vicios ocultos</li>
+                        <li>Procesos de desahucio</li>
+                        <li>Derechos de superficie y usufructo</li>
+                        <li>Expropiaciones forzosas</li>
+                        <li>Problemas de lindes y servidumbres</li>
+                    </ul>
+                    <p class="mt-4">Ofrecemos acompañamiento en todas las fases de las operaciones inmobiliarias, desde la negociación hasta la firma y posterior seguimiento.</p>
+                `
+            },
+            penal: {
+                title: "Derecho Penal",
+                content: `
+                    <p>Defensa especializada en Derecho Penal:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Delitos contra las personas (lesiones, homicidios)</li>
+                        <li>Delitos contra el patrimonio (robos, hurtos, estafas)</li>
+                        <li>Delitos contra la libertad sexual</li>
+                        <li>Delitos contra la seguridad vial</li>
+                        <li>Delitos contra la administración pública (cohecho, prevaricación)</li>
+                        <li>Delitos informáticos</li>
+                        <li>Delitos contra la salud pública (tráfico de drogas)</li>
+                        <li>Procedimientos de libertad condicional</li>
+                        <li>Recursos ante sentencias penales</li>
+                    </ul>
+                    <p class="mt-4">Defendemos tanto a acusados como a víctimas, garantizando en todo momento el respeto a los derechos fundamentales.</p>
+                `
+            },
+            mercantil: {
+                title: "Derecho Mercantil",
+                content: `
+                    <p>Asesoramiento en Derecho Mercantil y Societario:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Constitución de sociedades mercantiles</li>
+                        <li>Contratos mercantiles (compraventa, suministro, distribución)</li>
+                        <li>Fusiones y adquisiciones de empresas</li>
+                        <li>Concurso de acreedores</li>
+                        <li>Derecho cambiario y cheques</li>
+                        <li>Protección de la competencia</li>
+                        <li>Propiedad industrial e intelectual</li>
+                        <li>Contratación internacional</li>
+                        <li>Asesoramiento a consejos de administración</li>
+                    </ul>
+                    <p class="mt-4">Ofrecemos soluciones adaptadas a las necesidades de empresas y emprendedores, con enfoque práctico y orientado a resultados.</p>
+                `
+            }
+        };
+
+        // Handle all service detail buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.service-detail-btn')) {
+                const btn = e.target.closest('.service-detail-btn');
+                const service = btn.getAttribute('data-service');
+                const serviceInfo = serviceData[service];
+                
+                document.getElementById('serviceTitle').textContent = serviceInfo.title;
+                document.getElementById('serviceContent').innerHTML = serviceInfo.content;
+                document.getElementById('serviceModal').classList.remove('hidden');
+            }
+        });
+            btn.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const serviceInfo = serviceData[service];
+                
+                document.getElementById('serviceTitle').textContent = serviceInfo.title;
+                document.getElementById('serviceContent').innerHTML = serviceInfo.content;
+                document.getElementById('serviceModal').classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('closeServiceModal').addEventListener('click', function() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        });
+
+        document.getElementById('contactAboutService').addEventListener('click', function() {
+            document.getElementById('serviceModal').classList.add('hidden');
+            document.getElementById('appointmentModal').classList.remove('hidden');
+        });
+
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 this.classList.add('hidden');
             }
